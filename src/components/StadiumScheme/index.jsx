@@ -1,4 +1,3 @@
-import MetaTags from 'react-meta-tags'
 import fieldHref from './field'
 import './styles.css'
 
@@ -11,14 +10,6 @@ export default function StadiumScheme({
 
   return (
     <>
-      <MetaTags>
-        <style>
-          {Object.keys(sections).map(section => `
-            [data-section="${section}"]>path { fill: ${sections[section].fill[0]} }
-            [data-section="${section}"]:hover>path { fill: ${sections[section].fill[1]} }
-          `).join('')}
-        </style>
-      </MetaTags>
       <svg viewBox={viewBox} className='stadium-svg'>
         {!!field.width && !!field.height &&
           <image href={fieldHref} width={field.width} height={field.height} transform={`translate(${field.translate})`} />
